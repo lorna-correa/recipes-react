@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Recipe from './components/Recipe';
 import Nav from './components/Nav';
 import RecipeForm from './components/RecipeForm';
+import RecipeDetail from './components/RecipeDetail';
 import './assets/css/App.css';
 import recipesFile from './data/recipes-object'
 import base from './base'
@@ -25,7 +26,8 @@ class App extends Component{
       <Nav navMenu />
       <ul>
       {
-          Object.keys(this.state.recipes).map(key => <Recipe key={key}
+          Object.keys(this.state.recipes)
+              .map(key => <Recipe key={key}
                 index={key} 
                 details={this.state.recipes[key]}
                 removeRecipe={this.removeRecipe} />)

@@ -9,7 +9,7 @@ class RecipeForm extends React.Component {
              {Object.keys(this.props.recipes).map(this.renderRecipes)}
             <h3>Recipe Form Component</h3>
             <AddRecipeForm addRecipe={this.props.addRecipe}/>
-            <button onClick={this.props.loadSamples}>Load Sample Recipes</button>`
+            <button onClick={this.props.loadSamples}>Load Sample Recipes</button>
             </div>
         )
     }
@@ -18,6 +18,9 @@ class RecipeForm extends React.Component {
         super();
         this.renderRecipes = this.renderRecipes.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.state = {
+          uid: null
+        }
       }
 
     renderRecipes(key){
